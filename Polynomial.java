@@ -40,7 +40,6 @@ public class Polynomial{
 
     //iv
     public Polynomial add(Polynomial other) {
-
         int maxLength = Math.max(this.coefficients.length, other.coefficients.length);
         double[] resultCoefficients = new double[maxLength];
         
