@@ -1,20 +1,50 @@
-#CSCB07 Week3 Lab 1
-
-Develop class Polynomial as follows:
-i. It has one field representing the coefficients of the polynomial using an array of
-double. A polynomial is assumed to have the form 𝑎 ! + 𝑎" 𝑥 " + ⋯ + 𝑎 #$" 𝑥 #$" .
-For example, the polynomial 6 − 2𝑥 + 5𝑥 % would be represented using the
-array [6, -2, 0, 5]
-ii. It has a no-argument constructor that sets the polynomial to zero (i.e. the
-corresponding array would be [0])
-iii. It has a constructor that takes an array of double as an argument and sets the
-coefficients accordingly
-iv. It has a method named add that takes one argument of type Polynomial and
-returns the polynomial resulting from adding the calling object and the argument
-v. It has a method named evaluate that takes one argument of type double
-representing a value of x and evaluates the polynomial accordingly. For example,
-if the polynomial is 6 − 2𝑥 + 5𝑥 % and evaluate(-1) is invoked, the result should
-be 3.
-vi. It has a method named hasRoot that takes one argument of type double and
-determines whether this value is a root of the polynomial or not. Note that a root
-is a value of x for which the polynomial evaluates to zero.
+Fall 2025
+CSCB07 – Software Design
+Lab 2
+Objectives
+• Getting familiar with Java (loops, arrays, I/O)
+• Getting familiar with Git (branching)
+Logistics
+• This lab is worth 2% of the course grade and it will be supervised by your TA during the tutorial
+session in the week of Sep 22nd. If you encounter any problem while doing the steps listed in the
+next section, ask the TA for help.
+• Attendance will be taken during the tutorial. If you are unable to attend, please make a private
+Piazza post explaining why and make sure to submit the deliverables by the due date. Failing to
+do so might result in a grade of zero on this lab.
+• The lab should be done individually.
+• The due date is Sep 28, 2025.
+Instructions
+1. Clone the repo of Lab 1 using the command git clone RepoURL (RepoURL should be replaced by
+the actual URL of your repo)
+2. Change the directory using the command cd b07lab1
+3. Create a branch named lab2 using the command git checkout -b lab2
+4. Modify Polynomial.java as follows:
+a. Replace the array representing the coefficients by two arrays: one representing the nonzero coefficients (of type double) and another one representing the corresponding
+exponents(of type int). For example, the polynomial 6 − 2𝑥 + 5𝑥! would be represented
+using the arrays [6, -2, 5] and [0, 1, 3]
+b. Update the existing methods accordingly
+c. Add a method named multiply that takes one argument of type Polynomial and returns
+the polynomial resulting from multiplying the calling object and the argument. The
+resulting polynomial should not contain redundant exponents.
+d. Add a constructor that takes one argument of type File and initializes the polynomial
+based on the contents of the file. You can assume that the file contains one line with no
+Fall 2025
+whitespaces representing a valid polynomial. For example: the line 5-3x2+7x8
+corresponds to the polynomial 5 − 3𝑥" + 7𝑥#
+Hint: you might want to use the following methods: split of the String class, parseInt of
+the Integer class, and parseDouble of the Double class
+e. Add a method named saveToFile that takes one argument of type String representing a
+file name and saves the polynomial in textual format in the corresponding file (similar to
+the format used in part d)
+f. You can add any supplementary classes/methods you might find useful
+5. Modify Driver.java to test the updated code
+6. Make sure all the relevant java files are staged using the command git add *.java
+7. Record your changes using the command:
+git commit -m “modified Polynomial.java and Driver.java”
+8. Upload the changes made locally to your online repo using the command:
+git push --set-upstream origin lab2
+9. Submit the URL of your repo to “Lab 2” on Quercus
+Evaluation
+• Git: 0.5 pt
+• Java code: 1.5 pts
+• A 10% penalty will be applied for missing the tutorial with no valid excuse
